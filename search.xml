@@ -1,28 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[终于折腾好了]]></title>
-    <url>%2F2018%2F08%2F15%2F%E7%BB%88%E4%BA%8E%E6%8A%98%E8%85%BE%E5%A5%BD%E4%BA%86%2F</url>
-    <content type="text"><![CDATA[从上午折腾到现在，终于把这里部署到 Github 和 Coding 两个平台。本来一开始只准备放到 Github 的，后来发现访问速度实在太慢了，所以最后还是决定以 Coding 为主，Github 作为备份站吧。简单总结一下部署过程： 注册 Github 和 Coding 两个平台的帐号并准备好 SSHkey 分别创建 Pages 服务用到的Repo：{username}.github.io 和 {username}.coding.me 安装 NodeJs/git/Hexo等服务，网上教程很多 使用 Hexo 部署项目 配置 Hexo 及其主题（这里是 Next） 绑定个人域名 日常使用 Hexo 管理文章 到这里，平台应该已经能打开了，但还有一些细节的地方可能还要继续调整，这里推荐一篇文章，讲得比较全了。还有，下午折腾音乐播放的时候花了一些时间，经过试验发现通过 APayer + MetingJs 这个组合是最优了,即不用自己上传 mp3，曲库也是非一般的全，强烈推荐（主页，中文教程），效果如下： 其他方面跟着教程走基本就没什么问题了。 P.S. 也记不清这是第几次建类似的平台了，之前尝试在 VPS 上建 WordPress 后来发现维护太麻烦了，如果你只是需要一个记录信息的地方，使用 Pages 服务已经足够了。]]></content>
+<search> 
+  
+    
+    <entry>
+      <title>终于折腾好了</title>
+      <link href="/2018/08/15/%E7%BB%88%E4%BA%8E%E6%8A%98%E8%85%BE%E5%A5%BD%E4%BA%86/"/>
+      <url>/2018/08/15/%E7%BB%88%E4%BA%8E%E6%8A%98%E8%85%BE%E5%A5%BD%E4%BA%86/</url>
+      <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>从上午折腾到现在，终于把这里部署到 Github 和 Coding 两个平台。本来一开始只准备放到 Github 的，后来发现访问速度实在太慢了，所以最后还是决定以 Coding 为主，Github 作为备份站吧。<br>简单总结一下部署过程：<a id="more"></a></p><ul><li>注册 Github 和 Coding 两个平台的帐号并准备好 SSHkey</li><li>分别创建 Pages 服务用到的Repo：{username}.github.io 和 {username}.coding.me</li><li>安装 NodeJs/git/Hexo等服务，网上教程很多</li><li>使用 Hexo 部署项目</li><li>配置 Hexo 及其主题（这里是 Next）</li><li>绑定个人域名</li><li>日常使用 Hexo 管理文章  </li></ul><p>到这里，平台应该已经能打开了，但还有一些细节的地方可能还要继续调整，这里推荐一篇<a href="https://www.jianshu.com/p/3a05351a37dc" target="_blank" rel="noopener">文章</a>，讲得比较全了。<br>还有，下午折腾音乐播放的时候花了一些时间，经过试验发现通过 APayer + MetingJs 这个组合是最优了,即不用自己上传 mp3，曲库也是非一般的全，强烈推荐（<a href="https://github.com/MoePlayer/hexo-tag-aplayer/" target="_blank" rel="noopener">主页</a>，<a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md" target="_blank" rel="noopener">中文教程</a>），效果如下：  </p>    <div id="aplayer-uOPtLhng" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="486188245" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>  <p>其他方面跟着教程走基本就没什么问题了。  </p><p>P.S. 也记不清这是第几次建类似的平台了，之前尝试在 VPS 上建 WordPress 后来发现维护太麻烦了，如果你只是需要一个记录信息的地方，使用 Pages 服务已经足够了。</p>]]></content>
+      
       <categories>
-        <category>随便写的</category>
+          
+          <category> 随便写的 </category>
+          
       </categories>
-      <tags>
-        <tag>折腾</tag>
-        <tag>github</tag>
-        <tag>coding</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[起风了的第一篇文章]]></title>
-    <url>%2F2018%2F08%2F15%2F%E8%B5%B7%E9%A3%8E%E4%BA%86%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%2F</url>
-    <content type="text"><![CDATA[起风了2018年08月15日这天利用一上午的时间建了一个基于 Hexo+Github 的站，也算是没有浪费 G 站免费提供的一个服务，我终于可以在这里写一些东西了，当然这只是计划，毕竟计划跟不上变化，会不会写再说吧 - -！]]></content>
+      
+      
+        <tags>
+            
+            <tag> 折腾 </tag>
+            
+            <tag> github </tag>
+            
+            <tag> coding </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>起风了的第一篇文章</title>
+      <link href="/2018/08/15/%E8%B5%B7%E9%A3%8E%E4%BA%86%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+      <url>/2018/08/15/%E8%B5%B7%E9%A3%8E%E4%BA%86%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h1 id="起风了"><a href="#起风了" class="headerlink" title="起风了"></a>起风了</h1><p>2018年08月15日这天利用一上午的时间建了一个基于 Hexo+Github 的站，也算是没有浪费 G 站免费提供的一个服务，我终于可以在这里写一些东西了，当然这只是计划，毕竟计划跟不上变化，会不会写再说吧 - -！</p>]]></content>
+      
       <categories>
-        <category>随便写的</category>
+          
+          <category> 随便写的 </category>
+          
       </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Github</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+  
+  
 </search>
