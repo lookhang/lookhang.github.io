@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>华中师大2015级研究生悄悄选房网</title>
+<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+<script type="text/javascript" >
+
+
+function gotochoose(){
+	alert("即将打开一个新的窗口，请在新窗口完成选房操作！");
+	//alert("请使用正式报到系统");
+}
+
+function girl(){
+	ccwho('GJ04','1505','1505');
+	ccwho('GJ04','1506','1506');
+	ccwho('GJ04','1507','1507');
+	ccwho('GJ04','1508','1508');
+	ccwho('GJ04','1509','1509');
+	ccwho('GJ04','1510','1510');
+	ccwho('GJ04','1511','1511');
+	ccwho('GJ04','1512','1512');
+	ccwho('GJ04','1515','1515');
+	ccwho('GJ04','1516','1516');
+	ccwho('GJ04','1517','1517');
+	ccwho('GJ04','1518','1518');
+	ccwho('GJ04','1519','1519');
+	ccwho('GJ04','1520','1520');
+	ccwho('GJ04','1521','1521');
+	ccwho('GJ04','1522','1522');
+	ccwho('GJ04','1523','1523');
+	ccwho('GJ04','1524','1524');
+}
+
+function boy(){
+	ccwho('NH11','306','306');
+	ccwho('NH11','307','307');
+	ccwho('NH11','308','308');
+	ccwho('NH11','309','309');
+	ccwho('NH11','310','310');
+	ccwho('NH11','317','317');
+}
+
+function ccwho(area,room,target){
+	var textresult="";
+	$.ajax({
+		type:"get",
+		url:"/myccnu/selected?room="+area+room,
+		cache:false,
+		dataType:"json",
+		success: function(dataresult){
+			var stus=dataresult.data;
+			for(var o in stus){  
+         		textresult+=stus[o].xm+" "+stus[o].cwh+"<br/>";
+      		}
+			$("#"+target).html(textresult);
+		}
+	});
+	
+}
+
+function ccotherwho(area,maxfloor,maxroom,target){
+	for(i=1;i<=maxfloor;i++){
+		for(j=1;j<=maxroom;j++){
+			nowi=i;
+			if(i<10)nowi="0"+nowi;
+			
+			nowj=j;
+			if(j<10)nowj="0"+nowj;
+			
+			//setTimeout(function () { 
+        		otherajax(area,nowi,nowj,target);
+    		//}, 500);
+		}
+	}
+	
+	
+}
+
+function otherajax(area,nowi,nowj,target){
+	var textresult="";
+	$.ajax({
+		type:"get",
+		url:"/myccnu/selected?room="+area+nowi+nowj,
+		cache:false,
+		dataType:"json",
+		success: function(dataresult){
+			var stus=dataresult.data;
+			if(stus.lenth!=0){
+				for(var o in stus){  
+         			textresult+=stus[o].xm+" "+stus[o].cwh+"<br/><font size=1pt>（"+stus[o].yxmc+"）</font><br/>";
+      			}
+				$("#"+target).html("<font size=2pt>"+textresult+"</font>");
+			}
+			
+		}
+	});
+}
+
+function gentable(area,maxfloor,maxroom,maxcol,target){//20,24,8
+	for(i=1;i<=maxfloor;i++){
+		nowi=i;
+		if(i<10)nowi="0"+nowi;
+		for(k=1;k<=maxroom/maxcol;k++){
+			$("#"+target).append("<tr id='title_"+nowi+k+"' ></tr>");
+			$("#"+target).append("<tr id='room_"+nowi+k+"' ></tr>");
+			for(j=1;j<=maxcol;j++){
+				roomno=((k-1)*maxcol+j);
+				if(roomno<10) roomno="0"+roomno;
+				$("#title_"+nowi+k).append("<td align='center' >"+nowi+roomno+"</td>");
+				$("#room_"+nowi+k).append("<td align='center'  id='r_"+nowi+roomno+"'>&nbsp;</td>");
+				otherajax(area,nowi,roomno,"r_"+nowi+roomno);
+			}
+		}
+		
+		
+		
+		
+	}
+	
+}
+
+
+
+</script>
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+<!--tr>
+    <th colspan="8" align="center"><h1><font color="#FF0000">17号8点请使用正式报到地址：<a href="http://yjsnew.ccnu.edu.cn/login.jsp" target="_blank">http://yjsnew.ccnu.edu.cn/login.jsp</a></font></h1></th>
+  </tr-->
+  <tr>
+    <th colspan="8" align="center"><font color="#FF0000"><h1><b><u>重要说明：提前选的有可能被管理员清理，请在正式选房时间内务必进行确认！</u></b></h1></font></th>
+  </tr>
+  <tr>
+    <th colspan="8" align="center"><h1>选前说明</h1></th>
+  </tr>
+  <tr>
+    <td colspan="8"><h2>15级各位童鞋，因为正式选房时间（2015年08月17日）还未到，目前的选房仅作为群内（168430677）选房测试，<font color="#FF0000">最终的选房结果请以17号正式选房时查到的为准</font>，<u>本页面请勿外传！</u><br />如还需提前选，请在下方填写学号和身份证后六位，根据提示操作！<br /><br /><font color="#FF00FF">注意：登录后会打开一个新的窗口，请在新窗口进行选房操作！关于房间朝向，男生宿舍307、309为朝南，女生宿舍1515-1524为朝南，其他都为朝北！</fontss></h2></td>
+  </tr>
+  <tr>
+    <td colspan="8" align="center">
+    <form id="form1" name="form1" method="post" action="http://112.124.106.216:8088/myccnu/choose" target="_blank">
+  <label for="username"></label>
+  学号：<input name="username" type="text" id="username" value="" />
+  <label for="password"></label>
+  身份证后六位：<input name="password" type="text" id="password" value="" />
+  <input type="submit" name="Submit" id="submit" value="登录选房系统" onclick="gotochoose()"/>
+    </form>
+    如果出现 Connection reset 或 其他错误 请刷新一下页面即可！
+</td>
+  </tr>
+  
+  </tr>
+  <!--tr>
+    <td colspan="8" align="left"><h1>看看宿舍都有谁？</h1></td>
+  </tr>
+  <tr>
+    <td height="10" colspan="8" align="center" bgcolor="#99CCFF"><span onclick="boy()" style="text-decoration:underline;cursor:pointer" >点击这里查看男生宿舍</span></td>
+  </tr>
+  <tr>
+    <td height="10" align="center"><span onclick="ccwho('NH11','306','306')" >306</span></td>
+    <td align="center"><span onclick="ccwho('NH11','307','307')" >307</span></td>
+    <td align="center"><span onclick="ccwho('NH11','308','308')" >308</span></td>
+    <td align="center"><span onclick="ccwho('NH11','309','309')" >309</span></td>
+    <td align="center"><span onclick="ccwho('NH11','310','310')" >310</span></td>
+    <td align="center"><span onclick="ccwho('NH11','317','317')" >317</span></td>
+  </tr>
+  <tr>
+    
+    <td height="120" align="center"  id="306">&nbsp;</td>
+    <td align="center" id="307">&nbsp;</td>
+    <td align="center" id="308">&nbsp;</td>
+    <td align="center" id="309">&nbsp;</td>
+    <td align="center" id="310">&nbsp;</td>
+    <td align="center" id="317">&nbsp;</td>
+
+  </tr>
+  <tr>
+    <td height="10" colspan="8" align="center" bgcolor="#FF99FF"><span onclick="girl()" style="text-decoration:underline;cursor:pointer" >点击这里查看女生宿舍</span></td>
+  </tr>
+  <tr>
+    <td height="10" align="center"><span onclick="ccwho('GJ04','1505','1505')" >1505</span></td>
+    <td align="center"><span onclick="ccwho('GJ04','1506','1506')" >1506</span></td>
+    <td align="center"><span onclick="ccwho('GJ04','1507','1507')" >1507</span></td>
+    <td align="center"><span onclick="ccwho('GJ04','1508','1508')" >1508</span></td>
+    <td align="center"><span onclick="ccwho('GJ04','1509','1509')" >1509</span></td>
+    <td align="center"><span onclick="ccwho('GJ04','1510','1510')" >1510</span></td>
+    <td align="center"><span onclick="ccwho('GJ04','1511','1511')" >1511</span></td>
+    <td align="center"><span onclick="ccwho('GJ04','1512','1512')" >1512</span></td>
+  </tr>
+  <tr>
+    
+    <td align="center"  id="1505">&nbsp;</td>
+    <td align="center" id="1506">&nbsp;</td>
+    <td align="center" id="1507">&nbsp;</td>
+    <td align="center" id="1508">&nbsp;</td>
+    <td align="center" id="1509">&nbsp;</td>
+    <td align="center" id="1510">&nbsp;</td>
+    <td align="center" id="1511">&nbsp;</td>
+    <td height="120" align="center" id="1512">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="10" align="center"><span onclick="ccwho('GJ04','1515','1515')" >1515</span></td>
+    <td align="center"><span onclick="ccwho('GJ04','1516','1516')" >1516</span></td>
+    <td align="center"><span onclick="ccwho('GJ04','1517','1517')" >1517</span></td>
+    <td align="center"><span onclick="ccwho('GJ04','1518','1518')" >1518</span></td>
+    <td align="center"><span onclick="ccwho('GJ04','1519','1519')" >1519</span></td>
+    <td align="center"><span onclick="ccwho('GJ04','1520','1520')" >1520</span></td>
+    <td align="center"><span onclick="ccwho('GJ04','1521','1521')" >1521</span></td>
+    <td align="center"><span onclick="ccwho('GJ04','1522','1522')" >1522</span></td>
+  </tr>
+  <tr>
+    
+    <td align="center"  id="1515">&nbsp;</td>
+    <td align="center" id="1516">&nbsp;</td>
+    <td align="center" id="1517">&nbsp;</td>
+    <td align="center" id="1518">&nbsp;</td>
+    <td align="center" id="1519">&nbsp;</td>
+    <td align="center" id="1520">&nbsp;</td>
+    <td align="center" id="1521">&nbsp;</td>
+    <td height="120" align="center" id="1522">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="10" align="center"><span onclick="ccwho('GJ04','1523','1523')" >1523</span></td>
+    <td align="center"><span onclick="ccwho('GJ04','1524','1524')" >1524</span></td>
+  </tr>
+  <tr>
+    
+    <td align="center"  id="1523">&nbsp;</td>
+    <td align="center" id="1524">&nbsp;</td>
+
+  </tr-->
+  <tr>
+    <td colspan="8" align="right" >By Qunzhu 2015年08月15日 农历七月初二</td>
+  </tr>
+<tr>
+    <td colspan="8" align="center"><h1>时光荏苒，我们都毕业了！</h1></td>
+    <tr>
+    <td colspan="8" align="center"><img src="gogogo.png"/></td>
+  </tr>
+</table>
+
+<!--h1><span onclick="gentable('GJ04',20,32,8,'othertable')" style="text-decoration:underline;cursor:pointer" >点击这里查看国4还住了谁？(数据可能较多请耐心等待)</span></h1-->
+<h1><font color="#FF0000">评奖学金用的平均成绩计算：<a href="http://my.luluhang.cn/ccnuroom/calc.html" target="_blank">http://my.luluhang.cn/ccnuroom/calc.html</a></font></h1>
+<!--h1><font color="#FF0000">点击查看宿舍用电情况：<a href="http://119.29.41.233/lookmyroom.html" target="_blank">http://119.29.41.233/lookmyroom.html</a></font></h1-->
+<div id="other">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=0 height=0 src="//music.163.com/outchain/player?type=2&id=402070536&auto=1&height=32"></iframe>
+</div>
+</body>
+</html>

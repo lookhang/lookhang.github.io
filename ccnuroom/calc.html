@@ -1,0 +1,80 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>计算学分绩</title>
+
+		<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+        <script type="text/javascript">
+            
+
+$(function () {
+    //alert("异常！")
+});
+function calc(){
+    var text=$("#scoretext").val().trim()
+    scoreArray=text.split(/\r?\n/);
+    var total_score=0;
+    var total_fen=0;
+    $("#scorelist").text("");
+    for(var i =0;i<scoreArray.length;i++){
+        
+        textArray=scoreArray[i].split(" ");
+        //alert(textArray[7]+","+textArray[9]);//分数
+        $("#scorelist").append("【学分："+textArray[7]+"，成绩"+textArray[9]+"】<br/>")
+        total_score+=(parseFloat(textArray[7])*parseFloat(textArray[9]));
+        total_fen+=parseFloat(textArray[7])
+    }
+    $("#total_score").text(total_score);
+    $("#total_fen").text(total_fen);
+
+    var ascore=parseFloat(total_score)/parseFloat(total_fen);
+    $("#ascore_p").text(ascore);
+    $("#ascore").text(Math.round(ascore*100)/100);
+    
+}
+function handle(datass){
+    alert(datas);
+}
+
+
+        </script>
+		
+	</head>
+	<body>
+<h1>使用方法：登录研究生系统，直接按照下面截图中，复制然后粘贴到下面框中即可</h1>
+<img src="choosetext.png" />
+<textarea name="scoretext" id="scoretext" cols=100 rows=20>
+2015 第一学期 00000000001201 政治理论 必修 公共必修课 36 2 正常 62 2015-12-21 徐秉国  
+2015 第一学期 00000000001203 教育学原理 必修 公共必修课 36 2 正常 65 2015-12-30 王帅  
+2015 第一学期 00000000001204 课程与教学论 必修 公共必修课 36 2 正常 78 2015-12-30 罗祖兵  
+2015 第一学期 00000000001206 青少年心理发展与教育 必修 公共必修课 36 2 正常 80 2015-12-17 孔繁昌  
+2015 第一学期 00000000001209 教育科研方法 必修 公共必修课 36 2 正常 88 2015-12-03 郑刚  
+2015 第一学期 68000451141201 学习科学与技术 必修 二级学科必修课 36 2 正常 85 2015-12-31 郑旭东  
+2015 第一学期 68000451141202 计算机软件技术基础 必修 二级学科必修课 36 2 正常 48 2015-12-31 徐家臻  
+2015 第一学期 68000451141205 网络教育资源设计与开发 必修 二级学科必修课 36 2 正常 87 2015-01-05 吴军其  
+2015 第一学期 68000451141208 远程教育原理与实践 选修 选修课 36 2 正常 92 2015-12-29 王继新  
+2015 第二学期 00000000001202 外国语 必修 公共必修课 36 2 正常 60 2016-06-14 鲍林虹  
+2015 第二学期 68000451141203 教学系统设计及案例分析 必修 二级学科必修课 36 2 正常 90 2016-06-14 罗恒  
+2015 第二学期 68000451141204 信息技术与课程整合案例研究 必修 二级学科必修课 36 2 正常 98 2016-06-06 王忠华  
+2015 第二学期 68000451141206 教育评价模型与数据分析 选修 选修课 36 2 正常 93 2016-06-07 周平红  
+2015 第二学期 68000451141223 文献选读与论文写作 选修 选修课 36 2 正常 72 2016-07-01 王其云 
+
+</textarea>
+  <input type="submit" value="提交" onclick="calc()" style="width:100px;height:70px" /><h3>提醒：粘贴前，记得清除上面输入框里的测试数据，请保证粘贴的数据格式，以免影响计算</h3>
+
+<div>提取到你的分数列表为：<br/><span id="scorelist" ></span></div>
+<br/>
+<div >学分、成绩总和为：<span id="total_score" ></span></div>
+<br/>
+<div >总学分为：<span id="total_fen" ></span></div>
+<br/>
+
+<div id="result">你的平均学分绩是（四舍五入前）：<span id="ascore_p" ></span></div><br/>
+<h1>
+<div id="result">你的平均学分绩是（四舍五入后）：<span id="ascore" ></span></div>
+</h1>
+<h1><font color="#FF0000">返回刚刚那个页面<a href="http://my.luluhang.cn/ccnuroom" >http://my.luluhang.cn/ccnuroom</a></font></h1>
+</body>
+</html>
