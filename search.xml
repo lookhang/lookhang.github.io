@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[起风了的第一篇文章]]></title>
     <url>%2F2018%2F08%2F15%2F%E8%B5%B7%E9%A3%8E%E4%BA%86%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%2F</url>
-    <content type="text"><![CDATA[起风了2018年08月15日这天利用一上午的时间建了一个基于 Hexo+Github 的站，也算是没有浪费 G 站免费提供的一个服务，我终于可以在这里写一些东西了，当然这只是计划，毕竟计划跟不上变化，会不会写再说吧 - -！]]></content>
+    <content type="text"><![CDATA[起风了2018年08月15日这天利用一上午的时间建了一个基于 Hexo+Github 的站，也算是没有浪费 G 站免费提供的一个服务，我终于可以在这里写一些东西了，当然这只是计划，毕竟计划跟不上变化，会不会写再说吧 - -！ var ap = new APlayer({ element: document.getElementById("aplayer-LJbQTdDh"), narrow: false, autoplay: false, showlrc: false, music: { title: "可能否", author: "木小雅", url: "kenengfou-muxiaoya.mp3", pic: "", lrc: "" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap);]]></content>
       <categories>
         <category>随便写的</category>
       </categories>
